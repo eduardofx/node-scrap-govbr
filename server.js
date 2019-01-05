@@ -6,12 +6,12 @@ var express = require('express'),
 
 // Escolhendo no metodo .get() o caminho para fazer a requisição
 // Poderia ser somente a barra, mas para facilitar a compreensão vamos personalizar
-app.get('/raspagem', function(req, res) {
+app.get('/scraping', function(req, res) {
 
-    // Url a ser feita a raspagem de dados
+    // Url a ser feita a scraping de dados
     url = 'http://www.portaldatransparencia.gov.br/orgaos-superiores';
 
-    // Metodo que faz a requisição para tratarmos (raspar) os dados
+    // Metodo que faz a requisição para tratarmos (scraping) os dados
     request(url, function(error, response, html) {
 
         if (!error) {
@@ -21,7 +21,7 @@ app.get('/raspagem', function(req, res) {
             // Objeto que ira armazenar a tabela
             var resultado = [];
 
-            // Escolhendo a tabela para fazer a raspagem
+            // Escolhendo a tabela para fazer a scraping
             // e percorrendo as linhas 
             $('.grafico-tabela--sem-margem-inferior tr:not(:first-child)').each(function(i) {
                 
