@@ -1,0 +1,13 @@
+{
+    "name": "node-scrap-govbr",
+    "version": "0.0.1",
+    "description": "Exemplo de web scraping com Nodejs",
+    "main": "server.js",
+    "author": "Eduardo Kawassaki - [Rennan Martini]",
+    "license": "MIT",
+    "dependencies": {
+        "express": "latest",
+        "request": "latest",
+        "cheerio": "latest"
+    }
+}
