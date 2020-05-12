@@ -1,4 +1,4 @@
-var express = require('express'),
+const express = require('express'),
     fs = require('fs'),
     request = require('request'),
     cheerio = require('cheerio'),
@@ -16,17 +16,17 @@ app.get('/scraping', function(req, res) {
 
         if (!error) {
             // Preparando o cheeriojs para ler o DOM ~ le jQuery selector
-            var $ = cheerio.load(html);
+            let $ = cheerio.load(html);
 
             // Objeto que ira armazenar a tabela
-            var resultado = [];
+            let resultado = [];
 
             // Escolhendo a tabela para fazer a scraping
             // e percorrendo as linhas 
             $('.grafico-tabela--sem-margem-inferior tr:not(:first-child)').each(function(i) {
                 
                 // Obtendo as propriedades do objeto
-                var orgao = $(this).find('td').eq(0).text().trim(),
+                let orgao = $(this).find('td').eq(0).text().trim(),
                 orcamento = $(this).find('td').eq(1).text().trim(),
                 valor = $(this).find('td').eq(2).text().trim(),
                 percentual = $(this).find('td').eq(3).text().trim();
